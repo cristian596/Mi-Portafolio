@@ -1,0 +1,11 @@
+# Camilo Higuera · Desarrollador web
+
+> Portafolio de Camilo Higuera, desarrollador web junior. Diseña y programa landing pages y aplicaciones web con React, TypeScript, Vite y Tailwind CSS, con foco en rendimiento, accesibilidad y SEO técnico.
+
+## Secciones
+
+- [Sobre mí](/#sobre-mi): cómo trabaja y con qué herramientas.
+- [Proyectos](/#proyectos): cuatro proyectos de portafolio con demo y código.
+- [Servicios](/#servicios): landing pages, webs en React, velocidad y SEO, de Figma a código.
+- [Proceso](/#proceso): descubrir, diseñar, construir y lanzar.
+- [Contacto](/#contacto): formulario, email, WhatsApp, LinkedIn y GitHub.
