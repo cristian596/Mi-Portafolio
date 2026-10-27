@@ -45,6 +45,7 @@
   --color-accent: #2563eb;
   --color-accent-ink: #ffffff;
   --color-success: #10b981;
+  --color-whatsapp: #25d366;
 
   --font-display: "Unbounded", "Unbounded Fallback", sans-serif;
   --font-sans: "Onest", "Onest Fallback", ui-sans-serif, system-ui, sans-serif;
@@ -70,6 +71,8 @@
 
   --animate-marquee: marquee 42s linear infinite;
   --animate-rise: rise 850ms var(--ease-expo) both;
+  --animate-wa-bounce: wa-bounce 2.4s ease-in-out infinite;
+  --animate-wa-glow: wa-glow 2s ease-in-out infinite;
 
   @keyframes marquee {
     to {
@@ -79,6 +82,34 @@
   @keyframes rise {
     from {
       transform: translate3d(0, 105%, 0);
+    }
+  }
+  @keyframes wa-bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    40% {
+      transform: translate3d(0, -16px, 0);
+    }
+    60% {
+      transform: translate3d(0, -8px, 0);
+    }
+  }
+  @keyframes wa-glow {
+    0%,
+    100% {
+      box-shadow:
+        0 0 0 0 rgb(37 211 102 / 0.55),
+        0 0 16px 3px rgb(37 211 102 / 0.45);
+    }
+    50% {
+      box-shadow:
+        0 0 0 16px rgb(37 211 102 / 0),
+        0 0 30px 10px rgb(37 211 102 / 0.75);
     }
   }
 }

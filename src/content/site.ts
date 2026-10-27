@@ -16,13 +16,13 @@ export const person = {
   lastName: 'Higuera',
   role: 'Desarrollador web',
   location: 'Facatativá, Colombia',
-  email: 'camilithopks6@gmail.com',
+  email: 'info@camilohiguera.com',
   whatsapp: '+57 321 984 1852',
   whatsappUrl: `https://wa.me/573219841852?text=${encodeURIComponent('Hola, quiero hablar contigo sobre un proyecto web.')}`,
   linkedin: 'https://www.linkedin.com/in/cristian-higuera',
   github: 'https://github.com/cristian596',
   portrait: portrait as Picture,
-  portraitAlt: '[PLACEHOLDER] Retrato de Camilo Higuera',
+  portraitAlt: 'Camilo Higuera con traje, banda de grado y su diploma de Ingeniero de Software',
 }
 
 export const hero = {
@@ -62,7 +62,7 @@ export const about = {
   facts: [
     { term: 'Base', value: 'Facatativá, Colombia · trabajo en remoto' },
     { term: 'Stack', value: 'React, TypeScript, Vite, Tailwind CSS' },
-    { term: 'Idiomas', value: '[PLACEHOLDER] Español nativo, inglés' },
+    { term: 'Idiomas', value: 'Español nativo, inglés básico' },
     { term: 'Ahora', value: 'Disponible para proyectos freelance' },
   ],
 }

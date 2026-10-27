@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './sections/Hero'
 import Marquee from './components/Marquee'
 import Effects from './components/Effects'
+import WhatsAppButton from './components/WhatsAppButton'
 
 const About = lazy(() => import('./sections/About'))
 const Projects = lazy(() => import('./sections/Projects'))
@@ -43,6 +44,7 @@ export default function App() {
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
+      <WhatsAppButton />
       <Effects />
     </>
   )
