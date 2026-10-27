@@ -1,11 +1,7 @@
-import { hero, person, projects } from '../content/site'
+import { hero, person } from '../content/site'
 import Button, { Arrow } from '../components/Button'
 import LoadTime from '../components/LoadTime'
 import Monument from '../components/Monument'
-
-// Primer proyecto (no "Este portafolio": su captura es la portada y se vería duplicada)
-const shot = projects[0].image
-const blank = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
 
 const social = [
   ['GitHub', person.github],
@@ -18,7 +14,7 @@ export default function Hero() {
     <section
       id="inicio"
       aria-labelledby="hero-title"
-      className="relative flex min-h-svh flex-col px-5 pt-20 md:px-8 md:pt-28 md:pb-10"
+      className="relative flex flex-col px-5 pt-20 pb-8 md:min-h-svh md:px-8 md:pt-28 md:pb-10"
     >
       <div className="@container order-1 pt-4 md:order-2 md:my-auto md:pt-12 md:pb-10">
         <p className="text-lead font-medium">{hero.greeting}</p>
@@ -77,28 +73,6 @@ export default function Hero() {
           ))}
         </ul>
       </div>
-
-      {/* En el móvil la pantalla termina con la primera captura del trabajo, cortada por el borde. */}
-      <figure className="order-4 mt-8 pb-8 md:hidden">
-        <div className="aspect-[4/5] max-h-[62svh] overflow-clip bg-surface">
-          <picture>
-            <source media="(min-width: 768px)" srcSet={blank} />
-            <source type="image/avif" srcSet={shot.sources.avif} sizes="calc(100vw - 40px)" />
-            <source type="image/webp" srcSet={shot.sources.webp} sizes="calc(100vw - 40px)" />
-            <img
-              src={shot.img.src}
-              width={shot.img.w}
-              height={shot.img.h}
-              alt={projects[0].alt}
-              // El LCP es texto: la captura no debe robar ancho de banda a las fuentes
-              fetchPriority="low"
-              decoding="async"
-              className="size-full object-cover object-[0%_62%]"
-            />
-          </picture>
-        </div>
-        
-      </figure>
     </section>
   )
 }

@@ -57,12 +57,12 @@ export default function ProjectCard({ project, index, total }: Props) {
               picture={project.image}
               alt=""
               sizes="(min-width: 768px) 48vw, calc(100vw - 72px)"
-              className="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-(--ease-out) group-hover:scale-[1.04]"
+              className="h-auto w-full transition-transform duration-700 ease-(--ease-out) group-hover:scale-[1.04]"
             />
           </a>
           <div className="flex flex-col md:col-span-5 md:col-start-8">
             <p className="max-w-[44ch]">{project.summary}</p>
-            <ul className="mt-6 flex flex-wrap gap-2" aria-label={`Tecnologías de ${project.title}`}>
+            <ul className="mt-6 flex flex-wrap gap-2" aria-label={`Etiquetas de ${project.title}`}>
               {project.tags.map((t) => (
                 <li key={t} className="bg-raised px-3 py-1.5 text-small font-medium">
                   {t}
@@ -72,10 +72,6 @@ export default function ProjectCard({ project, index, total }: Props) {
             <div className="mt-8 flex gap-8 font-medium md:mt-auto md:pt-8">
               <a href={project.demo} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 Ver demo <span className="sr-only">de {project.title}</span>
-                <Arrow className={arrowClass} />
-              </a>
-              <a href={project.repo} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                Código <span className="sr-only">de {project.title} en GitHub</span>
                 <Arrow className={arrowClass} />
               </a>
             </div>

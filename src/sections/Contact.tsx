@@ -4,8 +4,8 @@ import ContactForm from './ContactForm'
 
 export const channels = [
   { label: 'WhatsApp', value: person.whatsapp, href: person.whatsappUrl },
-  { label: 'LinkedIn', value: 'Camilo Higuera', href: person.linkedin },
-  { label: 'GitHub', value: '@camilohiguera', href: person.github },
+  { label: 'LinkedIn', value: 'cristian-higuera', href: person.linkedin },
+  { label: 'GitHub', value: '@cristian596', href: person.github },
   { label: 'Email', value: person.email, href: `mailto:${person.email}` },
 ]
 

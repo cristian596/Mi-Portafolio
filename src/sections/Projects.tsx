@@ -13,8 +13,8 @@ export default function Projects() {
           Proyectos
         </h2>
         <p data-reveal className="col-span-4 max-w-[44ch] md:col-span-5 md:col-start-8">
-          Cuatro proyectos de portafolio hechos de principio a fin: diseño, código, despliegue y medición. Cada uno con su
-          demo y su código abierto.
+          Cuatro webs hechas de principio a fin: una barbería con reservas y panel de administración, y tres plantillas
+          listas para despachos de abogados, hoteles y salones de belleza. Cada una con su demo en línea.
         </p>
       </div>
       <ol className="mt-14 flex flex-col gap-[12svh] [timeline-scope:--card-1,--card-2,--card-3] md:mt-20">

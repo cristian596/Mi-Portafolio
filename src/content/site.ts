@@ -1,10 +1,10 @@
 // Todo el contenido editable del sitio vive aquí.
 // Busca "[PLACEHOLDER]" para ver lo que falta por completar con tus datos reales.
 
-import shotTostadora from '../assets/projects/tostadora.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
-import shotRuta from '../assets/projects/ruta-clara.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
-import shotPulso from '../assets/projects/pulso.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
-import shotPortfolio from '../assets/projects/portafolio.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
+import shotAbogados from '../assets/projects/abogados.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
+import shotBarberia from '../assets/projects/black-iron.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
+import shotHotel from '../assets/projects/hotel.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
+import shotSalon from '../assets/projects/salon.png?w=640;960;1280;1600&format=avif;webp;jpg&as=picture'
 import portrait from '../assets/portrait.png?w=400;640;900&format=avif;webp;jpg&as=picture'
 import type { Picture } from '../types'
 
@@ -15,12 +15,12 @@ export const person = {
   firstName: 'Camilo',
   lastName: 'Higuera',
   role: 'Desarrollador web',
-  location: '[PLACEHOLDER] Ciudad, País',
-  email: 'hola@camilohiguera.dev', // [PLACEHOLDER]
-  whatsapp: '+57 300 000 0000', // [PLACEHOLDER] número con prefijo de país
-  whatsappUrl: 'https://wa.me/573000000000', // [PLACEHOLDER]
-  linkedin: 'https://www.linkedin.com/in/camilo-higuera', // [PLACEHOLDER]
-  github: 'https://github.com/camilohiguera', // [PLACEHOLDER]
+  location: 'Facatativá, Colombia',
+  email: 'camilithopks6@gmail.com',
+  whatsapp: '+57 321 984 1852',
+  whatsappUrl: `https://wa.me/573219841852?text=${encodeURIComponent('Hola, quiero hablar contigo sobre un proyecto web.')}`,
+  linkedin: 'https://www.linkedin.com/in/cristian-higuera',
+  github: 'https://github.com/cristian596',
   portrait: portrait as Picture,
   portraitAlt: '[PLACEHOLDER] Retrato de Camilo Higuera',
 }
@@ -55,11 +55,12 @@ export const about = {
   statement:
     'Empiezo donde muchas webs fallan: la velocidad, los detalles y que cada sección tenga un motivo.',
   body: [
-    '[PLACEHOLDER] Soy desarrollador web junior. Me formé construyendo proyectos propios de principio a fin: desde el boceto en Figma hasta el despliegue, midiendo cada página con Lighthouse antes de darla por terminada.',
-    '[PLACEHOLDER] Busco mis primeros proyectos con negocios y personas que necesiten una web clara, rápida y fácil de mantener. A cambio pongo tiempo, cuidado y comunicación directa en cada paso.',
+    'Soy desarrollador web independiente y creo landing pages y webs para negocios que quieren verse profesionales en internet. Mi enfoque es que tu cliente se vea bien en el celular, cargue rápido y tenga una forma clara de contactarte, como un botón directo a WhatsApp.',
+    'Tengo plantillas listas para barberías, despachos de abogados, clínicas dentales, constructoras, salones de belleza y hoteles, y también desarrollo proyectos a medida según lo que necesite tu negocio.',
+    'Escríbeme con los datos de tu negocio y te digo qué tipo de web te conviene.',
   ],
   facts: [
-    { term: 'Base', value: '[PLACEHOLDER] Ciudad, País · trabajo en remoto' },
+    { term: 'Base', value: 'Facatativá, Colombia · trabajo en remoto' },
     { term: 'Stack', value: 'React, TypeScript, Vite, Tailwind CSS' },
     { term: 'Idiomas', value: '[PLACEHOLDER] Español nativo, inglés' },
     { term: 'Ahora', value: 'Disponible para proyectos freelance' },
@@ -72,55 +73,50 @@ export type Project = {
   summary: string
   tags: string[]
   demo: string
-  repo: string
   image: Picture
   alt: string
 }
 
 export const projects: Project[] = [
   {
-    slug: 'tostadora',
-    title: 'Tostadora',
+    slug: 'abogados',
+    title: 'Altamira Ferrer Abogados',
     summary:
-      '[PLACEHOLDER] Landing page para una cafetería de barrio: carta, horarios y pedidos por WhatsApp en una sola página que carga en menos de un segundo.',
-    tags: ['React', 'Tailwind CSS', 'Vite'],
-    demo: 'https://example.com', // [PLACEHOLDER]
-    repo: 'https://github.com/camilohiguera', // [PLACEHOLDER]
-    image: shotTostadora as Picture,
-    alt: '[PLACEHOLDER] Captura de la landing page Tostadora',
+      'Plantilla de landing para despachos de abogados: presentación de especialidades, equipo y metodología, y una evaluación inicial del caso que lleva al contacto. Disponible en español e inglés.',
+    tags: ['Plantilla', 'Despachos de abogados', 'Español / inglés'],
+    demo: 'https://abogados-demo-bc8.pages.dev/es',
+    image: shotAbogados as Picture,
+    alt: 'Landing de Altamira Ferrer Abogados en escritorio y móvil, con fondo azul noche y detalles dorados',
   },
   {
-    slug: 'ruta-clara',
-    title: 'Ruta Clara',
+    slug: 'black-iron-barbers',
+    title: 'Black Iron Barbers',
     summary:
-      '[PLACEHOLDER] Aplicación de tareas por proyectos con arrastrar y soltar, filtros y guardado local. Pensada para usarse con el teclado.',
-    tags: ['React', 'TypeScript', 'Zustand'],
-    demo: 'https://example.com', // [PLACEHOLDER]
-    repo: 'https://github.com/camilohiguera', // [PLACEHOLDER]
-    image: shotRuta as Picture,
-    alt: '[PLACEHOLDER] Captura de la aplicación Ruta Clara',
+      'Sistema completo para una barbería: reserva de citas en línea con horarios por bloques, correo de confirmación con archivo de calendario y un panel de administración con agenda, empleados y reportes.',
+    tags: ['React 19', 'Express', 'PostgreSQL', 'Docker'],
+    demo: 'https://black-iron-barbers.camilithopks6.workers.dev/',
+    image: shotBarberia as Picture,
+    alt: 'Black Iron Barbers: landing, reserva de citas en el móvil y panel de administración con indicadores',
   },
   {
-    slug: 'pulso',
-    title: 'Pulso',
+    slug: 'hotel',
+    title: 'Hotel Ejemplo',
     summary:
-      '[PLACEHOLDER] Panel del clima que consume una API pública, con búsqueda de ciudades, gráficas ligeras y estados de carga y error cuidados.',
-    tags: ['TypeScript', 'API REST', 'Charts'],
-    demo: 'https://example.com', // [PLACEHOLDER]
-    repo: 'https://github.com/camilohiguera', // [PLACEHOLDER]
-    image: shotPulso as Picture,
-    alt: '[PLACEHOLDER] Captura del panel Pulso',
+      'Plantilla de landing para hoteles: habitaciones, servicios y galería, con una consulta de estancia que calcula al momento el precio de cada habitación según las fechas y los huéspedes. Español e inglés.',
+    tags: ['Plantilla', 'Hoteles', 'Español / inglés'],
+    demo: 'https://hotel-demo-bg1.pages.dev/',
+    image: shotHotel as Picture,
+    alt: 'Landing de Hotel Ejemplo en escritorio y móvil, con consulta de fechas y precio por habitación',
   },
   {
-    slug: 'portafolio',
-    title: 'Este portafolio',
+    slug: 'salon-de-belleza',
+    title: 'Salón de belleza',
     summary:
-      'La página que estás leyendo: prerenderizada para buscadores, con animaciones que respetan el movimiento reducido y Lighthouse por encima de 95.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Motion'],
-    demo: SITE_URL,
-    repo: 'https://github.com/camilohiguera', // [PLACEHOLDER]
-    image: shotPortfolio as Picture,
-    alt: 'Captura de la portada de este portafolio con el nombre Camilo Higuera a toda la anchura',
+      'Plantilla de landing para salones de belleza: tratamientos, resultados, promociones y equipo. La solicitud de cita abre WhatsApp con el mensaje ya preparado.',
+    tags: ['Plantilla', 'Salones de belleza', 'WhatsApp'],
+    demo: 'https://salon-de-belleza-demo.pages.dev/',
+    image: shotSalon as Picture,
+    alt: 'Landing de un salón de belleza en escritorio y móvil, con formulario de solicitud de cita',
   },
 ]
 
@@ -190,7 +186,7 @@ export const contact = {
 export const nav = [
   { label: 'Inicio', href: '#inicio', preview: 'Quién soy y qué hago' },
   { label: 'Sobre mí', href: '#sobre-mi', preview: 'Cómo pienso una web' },
-  { label: 'Proyectos', href: '#proyectos', preview: 'Cuatro proyectos de portafolio' },
+  { label: 'Proyectos', href: '#proyectos', preview: 'Plantillas y proyectos a medida' },
   { label: 'Servicios', href: '#servicios', preview: 'Lo que puedo construir para ti' },
   { label: 'Proceso', href: '#proceso', preview: 'Cuatro pasos, sin sorpresas' },
   { label: 'Contacto', href: '#contacto', preview: 'Escríbeme hoy mismo' },

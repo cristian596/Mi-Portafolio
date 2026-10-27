@@ -5,7 +5,7 @@
 ## Secciones
 
 - [Sobre mí](/#sobre-mi): cómo trabaja y con qué herramientas.
-- [Proyectos](/#proyectos): cuatro proyectos de portafolio con demo y código.
+- [Proyectos](/#proyectos): cuatro proyectos (barbería con reservas y panel, y plantillas para abogados, hoteles y salones) con demo en línea.
 - [Servicios](/#servicios): landing pages, webs en React, velocidad y SEO, de Figma a código.
 - [Proceso](/#proceso): descubrir, diseñar, construir y lanzar.
 - [Contacto](/#contacto): formulario, email, WhatsApp, LinkedIn y GitHub.
