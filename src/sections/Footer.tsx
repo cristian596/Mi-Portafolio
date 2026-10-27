@@ -1,5 +1,6 @@
 import { nav, person } from '../content/site'
 import { Arrow } from '../components/Button'
+import { GA_ID, openCookieSettings } from '../cookies/consent'
 
 const social = [
   ['GitHub', person.github],
@@ -53,7 +54,21 @@ export default function Footer() {
           </ul>
         </div>
         <div className="col-span-4 flex flex-wrap items-center justify-between gap-4 text-small md:col-span-12">
-          <p>© {new Date().getFullYear()} Camilo Higuera. Hecho a mano con React, Vite y Tailwind CSS.</p>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
+            <p>© {new Date().getFullYear()} Camilo Higuera. Hecho a mano con React, Vite y Tailwind CSS.</p>
+            <a href="/privacidad" className="inline-block py-1.5 font-medium hover:underline hover:underline-offset-4">
+              Política de privacidad
+            </a>
+            {GA_ID && (
+              <button
+                type="button"
+                onClick={openCookieSettings}
+                className="py-1.5 font-medium hover:underline hover:underline-offset-4"
+              >
+                Configuración de cookies
+              </button>
+            )}
+          </div>
           <a href="#inicio" className="inline-flex items-center gap-2 py-1.5 font-medium hover:underline hover:underline-offset-4">
             Volver arriba
             <Arrow className="-rotate-45" />

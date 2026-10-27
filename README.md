@@ -22,6 +22,15 @@ Las capturas van en `src/assets/projects/*.png` (1600×1000) y la foto en `src/a
 se convierten solas a AVIF/WebP/JPG con `srcset` al hacer build. El dominio y la clave del formulario van en `.env`
 (copia `.env.example`). Recuerda cambiar también el email y las redes del JSON-LD en `index.html`.
 
+## Privacidad y cookies
+
+- `/privacidad` (`src/pages/Privacy.tsx`) es la política de tratamiento de datos (Ley 1581 de 2012). Se prerenderiza junto a la portada.
+  Los datos legales (titular, domicilio, fecha) están en `legal` dentro de `src/content/site.ts`.
+- El formulario exige aceptar la política antes de enviar.
+- Google Analytics: pon el ID `G-XXXXXXXXXX` en `VITE_GA_ID`. Hasta entonces no hay analítica ni aviso de cookies. Con el ID aparecen el
+  aviso (Aceptar / Rechazar / Configurar) y el enlace «Configuración de cookies» en el pie; Analytics solo se carga tras aceptar
+  (`src/cookies/consent.ts`). En GA4 configura la retención de datos a 14 meses o menos.
+
 ## Cómo funciona el prerender
 
 `scripts/prerender.mjs` (sin plugins): Vite compila `src/entry-server.tsx` en modo SSR, el script llama a

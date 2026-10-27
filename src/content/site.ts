@@ -25,6 +25,13 @@ export const person = {
   portraitAlt: 'Camilo Higuera con traje, banda de grado y su diploma de Ingeniero de Software',
 }
 
+// Datos legales para la política de privacidad (Ley 1581 de 2012).
+export const legal = {
+  holder: 'Cristian Camilo Higuera Carrillo', // [CONFIRMAR] nombre legal tal como aparece en la cédula
+  domicile: 'Facatativá, Cundinamarca, Colombia',
+  privacyUpdated: '27 de octubre de 2026',
+}
+
 export const hero = {
   greeting: 'Hola, soy',
   headline: 'Webs rápidas que convierten visitas en clientes.',

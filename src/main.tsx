@@ -1,16 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-import App from './App'
+import Root from './Root'
+import { initConsent } from './cookies/consent'
 import { runPreloader } from './preloader'
 import { setupReveal } from './reveal'
 import './index.css'
 
 runPreloader()
+initConsent()
 
 const root = document.getElementById('root')!
 const app = (
   <StrictMode>
-    <App />
+    <Root path={location.pathname.replace(/\/+$/, '') || '/'} />
   </StrictMode>
 )
 

@@ -1,8 +1,8 @@
 import { useId, useRef, useState, type FormEvent } from 'react'
-import { contact, person } from '../content/site'
+import { contact, legal, person } from '../content/site'
 
 type Via = 'WhatsApp' | 'Correo'
-type Field = 'name' | 'contact' | 'type' | 'message'
+type Field = 'name' | 'contact' | 'type' | 'message' | 'consent'
 type Errors = Partial<Record<Field, string>>
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 type Data = Record<Field, string> & { via: Via }
@@ -24,6 +24,7 @@ function validate(data: Data): Errors {
   }
   if (!data.type) e.type = 'Elige el tipo de proyecto.'
   if (data.message.trim().length < 10) e.message = 'Cuéntame un poco más (mínimo 10 caracteres).'
+  if (!data.consent) e.consent = 'Para enviar el mensaje debes aceptar la política de privacidad.'
   return e
 }
 
@@ -46,6 +47,7 @@ export default function ContactForm() {
       contact: String(fd.get('contact') ?? ''),
       type: String(fd.get('type') ?? ''),
       message: String(fd.get('message') ?? ''),
+      consent: fd.get('consent') ? 'si' : '',
     }
   }
 
@@ -78,6 +80,7 @@ export default function ContactForm() {
           type: data.type,
           message: data.message,
           preferencia_de_contacto: data.via,
+          autorizacion_datos: `Aceptó la política de privacidad del ${legal.privacyUpdated}`,
           // Web3Forms usa el campo `email` como dirección de respuesta
           ...(data.via === 'WhatsApp'
             ? { whatsapp: data.contact, whatsapp_enlace: `https://wa.me/${phoneDigits(data.contact)}` }
@@ -235,6 +238,20 @@ export default function ContactForm() {
           {...aria('message')}
         />
         {err('message')}
+      </div>
+      <div>
+        <label className="flex cursor-pointer items-start gap-3 text-small">
+          <input type="checkbox" name="consent" className="mt-0.5 size-5 shrink-0 accent-accent" {...aria('consent')} />
+          <span>
+            Acepto la{' '}
+            <a href="/privacidad" target="_blank" rel="noopener noreferrer" className="font-medium underline underline-offset-4">
+              Política de privacidad
+            </a>{' '}
+            y autorizo el tratamiento de mis datos para responder a mi solicitud, incluida su transmisión a los
+            proveedores que allí se indican.
+          </span>
+        </label>
+        {err('consent')}
       </div>
       <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
