@@ -43,6 +43,13 @@ privacy = setTag(privacy, /<meta name="twitter:description"[^>]*>/, `<meta name=
 await fs.mkdir(path.join(dist, 'privacidad'), { recursive: true })
 await fs.writeFile(path.join(dist, 'privacidad', 'index.html'), privacy)
 
+// 404.html: Cloudflare Pages lo sirve (con estado 404) para cualquier dirección que no exista.
+let notFound = build(await render('/404'))
+notFound = setTag(notFound, /<title>[\s\S]*?<\/title>/, '<title>Página no encontrada · Camilo Higuera</title>')
+notFound = setTag(notFound, /<meta name="robots"[^>]*>/, '<meta name="robots" content="noindex, nofollow" />')
+notFound = setTag(notFound, /<link rel="canonical"[^>]*>/, '')
+await fs.writeFile(path.join(dist, '404.html'), notFound)
+
 const today = new Date().toISOString().slice(0, 10)
 await fs.writeFile(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`)
 await fs.writeFile(

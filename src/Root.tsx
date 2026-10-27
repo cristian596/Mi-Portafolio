@@ -4,6 +4,7 @@ import CookieBanner from './components/CookieBanner'
 import { PRIVACY_EVENT } from './privacy'
 
 const Privacy = lazy(() => import('./pages/Privacy'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 const PolicyModal = lazy(() => import('./components/PolicyModal'))
 
 export const PRIVACY_PATH = '/privacidad'
@@ -36,16 +37,14 @@ function PolicyHost() {
   )
 }
 
-/** Enrutado mínimo: la portada y la política de privacidad (ambas prerenderizadas). */
+/** Enrutado mínimo: portada, política de privacidad y 404 (todas prerenderizadas). */
 export default function Root({ path }: { path: string }) {
   return (
     <>
-      {path === PRIVACY_PATH ? (
-        <Suspense fallback={null}>
-          <Privacy />
-        </Suspense>
-      ) : (
+      {path === '/' ? (
         <App />
+      ) : (
+        <Suspense fallback={null}>{path === PRIVACY_PATH ? <Privacy /> : <NotFound />}</Suspense>
       )}
       <CookieBanner />
       <PolicyHost />
