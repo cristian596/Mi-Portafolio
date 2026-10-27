@@ -38,8 +38,14 @@ se convierten solas a AVIF/WebP/JPG con `srcset` al hacer build. El dominio y la
 - Escritorio con ratón: Lenis, cursor, botones magnéticos y tilt (`src/effects/desktop.ts`, Motion mini),
   cargados con `import()` solo si hay `hover: hover` y sin movimiento reducido.
 
-## Despliegue (Vercel)
+## Despliegue (Cloudflare)
 
-Framework «Other», build `npm run build`, salida `dist`. `vercel.json` ya define caché inmutable para
-`/assets` y `/fonts`, HTML sin caché y cabeceras de seguridad. Vercel comprime con Brotli/gzip automáticamente.
-Añade `VITE_SITE_URL` y `VITE_WEB3FORMS_KEY` en las variables de entorno del proyecto.
+**Cloudflare Pages** (conectado a GitHub): framework «None», comando de build `npm run build`, directorio de salida `dist`.
+En *Settings → Variables* añade `VITE_SITE_URL` (tu dominio, sin barra final) y `VITE_WEB3FORMS_KEY`. La versión de Node
+sale de `.node-version` (22).
+
+`public/_headers` se copia a `dist/` y define caché inmutable para `/assets` y `/fonts`, HTML sin caché y las cabeceras de
+seguridad (equivale al antiguo `vercel.json`). Cloudflare comprime con Brotli/gzip y sirve `/` sin extensión por sí mismo.
+
+Dominio propio: *Custom domains* en el proyecto de Pages. Si despliegas como Worker con assets estáticos, `_headers`
+también funciona; apunta el directorio de assets a `dist`.

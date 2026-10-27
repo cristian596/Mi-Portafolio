@@ -9,7 +9,7 @@ const root = path.resolve(import.meta.dirname, '..')
 const dist = path.join(root, 'dist')
 const ssr = path.join(root, 'dist-ssr')
 const env = loadEnv('production', root, 'VITE_')
-const site = (env.VITE_SITE_URL || 'https://camilohiguera.dev').replace(/\/$/, '')
+const site = (env.VITE_SITE_URL || 'https://camilohiguera.com').replace(/\/$/, '')
 
 const { render } = await import(pathToFileURL(path.join(ssr, 'entry-server.js')).href)
 const appHtml = await render()

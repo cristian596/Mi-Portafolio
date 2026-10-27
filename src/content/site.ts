@@ -8,7 +8,7 @@ import shotSalon from '../assets/projects/salon.png?w=640;960;1280;1600&format=a
 import portrait from '../assets/portrait.png?w=400;640;900&format=avif;webp;jpg&as=picture'
 import type { Picture } from '../types'
 
-export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? 'https://camilohiguera.dev').replace(/\/$/, '')
+export const SITE_URL = (import.meta.env.VITE_SITE_URL ?? 'https://camilohiguera.com').replace(/\/$/, '')
 
 export const person = {
   name: 'Camilo Higuera',
