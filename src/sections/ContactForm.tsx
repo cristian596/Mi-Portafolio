@@ -1,5 +1,6 @@
 import { useId, useRef, useState, type FormEvent } from 'react'
 import { contact, legal, person } from '../content/site'
+import { openPrivacy } from '../privacy'
 
 type Via = 'WhatsApp' | 'Correo'
 type Field = 'name' | 'contact' | 'type' | 'message' | 'consent'
@@ -244,7 +245,7 @@ export default function ContactForm() {
           <input type="checkbox" name="consent" className="mt-0.5 size-5 shrink-0 accent-accent" {...aria('consent')} />
           <span>
             Acepto la{' '}
-            <a href="/privacidad" target="_blank" rel="noopener noreferrer" className="font-medium underline underline-offset-4">
+            <a href="/privacidad" onClick={openPrivacy} className="font-medium underline underline-offset-4">
               Política de privacidad
             </a>{' '}
             y autorizo el tratamiento de mis datos para responder a mi solicitud, incluida su transmisión a los

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react'
 import { GA_ID, SETTINGS_EVENT, readConsent, saveConsent } from '../cookies/consent'
+import { openPrivacy } from '../privacy'
 
 type View = 'hidden' | 'banner' | 'settings'
 
@@ -75,7 +76,7 @@ function Banner() {
         <p className="mt-2 text-small">
           Uso Google Analytics para entender cómo se usa el sitio y mejorarlo. Solo se activa si lo aceptas. Puedes
           cambiarlo cuando quieras. Más información en la{' '}
-          <a href="/privacidad" className="font-medium underline underline-offset-4">
+          <a href="/privacidad" onClick={openPrivacy} className="font-medium underline underline-offset-4">
             Política de privacidad
           </a>
           .
@@ -166,7 +167,15 @@ function Banner() {
           </div>
           <p className="mt-5 text-small text-muted">
             Detalle de cada cookie y cómo ejercer tus derechos en la{' '}
-            <a href="/privacidad" className="font-medium text-ink underline underline-offset-4">
+            <a
+              href="/privacidad"
+              onClick={(e) => {
+                openPrivacy(e)
+                // La ventana de la política queda por encima: se cierra el panel de cookies sin devolver el foco
+                if (e.defaultPrevented) setView(readConsent() ? 'hidden' : 'banner')
+              }}
+              className="font-medium text-ink underline underline-offset-4"
+            >
               Política de privacidad
             </a>
             .

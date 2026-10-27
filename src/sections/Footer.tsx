@@ -1,6 +1,7 @@
 import { nav, person } from '../content/site'
 import { Arrow } from '../components/Button'
 import { GA_ID, openCookieSettings } from '../cookies/consent'
+import { openPrivacy } from '../privacy'
 
 const social = [
   ['GitHub', person.github],
@@ -56,7 +57,7 @@ export default function Footer() {
         <div className="col-span-4 flex flex-wrap items-center justify-between gap-4 text-small md:col-span-12">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
             <p>© {new Date().getFullYear()} Camilo Higuera. Hecho a mano con React, Vite y Tailwind CSS.</p>
-            <a href="/privacidad" className="inline-block py-1.5 font-medium hover:underline hover:underline-offset-4">
+            <a href="/privacidad" onClick={openPrivacy} className="inline-block py-1.5 font-medium hover:underline hover:underline-offset-4">
               Política de privacidad
             </a>
             {GA_ID && (
