@@ -4,7 +4,6 @@ type Props = {
   href: string
   children: ReactNode
   variant?: 'solid' | 'text'
-  inverse?: boolean
   className?: string
   external?: boolean
 }
@@ -18,7 +17,7 @@ export function Arrow({ className = '' }: { className?: string }) {
 }
 
 /** El único botón sólido de la página: rectángulo recto, un relleno. */
-export default function Button({ href, children, variant = 'solid', inverse = false, className = '', external }: Props) {
+export default function Button({ href, children, variant = 'solid', className = '', external }: Props) {
   const ext = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
   if (variant === 'text') {
     return (
@@ -38,7 +37,7 @@ export default function Button({ href, children, variant = 'solid', inverse = fa
       {...ext}
       data-magnetic
       className={`group relative inline-flex items-center justify-center gap-3 px-6 py-4 font-medium transition-[scale] duration-150 ease-(--ease-out) active:scale-[0.97] ${
-        inverse ? 'bg-bg text-ink' : 'bg-ink text-bg'
+        'bg-accent text-accent-ink hover:brightness-110'
       } ${className}`}
     >
       <span data-magnetic-inner className="inline-flex items-center gap-3">

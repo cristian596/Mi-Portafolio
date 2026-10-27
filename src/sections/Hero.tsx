@@ -3,7 +3,8 @@ import Button, { Arrow } from '../components/Button'
 import LoadTime from '../components/LoadTime'
 import Monument from '../components/Monument'
 
-const shot = projects[3].image
+// Primer proyecto (no "Este portafolio": su captura es la portada y se vería duplicada)
+const shot = projects[0].image
 const blank = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
 
 const social = [
@@ -50,7 +51,10 @@ export default function Hero() {
           </Button>
         </div>
         <div className="hidden text-right text-small lg:col-span-3 lg:col-start-10 lg:block">
-          <p className="font-medium">{hero.availability}</p>
+          <p className="inline-flex items-center gap-2 font-medium">
+            <span aria-hidden="true" className="size-2.5 rounded-full bg-success" />
+            {hero.availability}
+          </p>
           <p>{person.location}</p>
         </div>
       </div>
@@ -85,7 +89,7 @@ export default function Hero() {
               src={shot.img.src}
               width={shot.img.w}
               height={shot.img.h}
-              alt={projects[3].alt}
+              alt={projects[0].alt}
               // El LCP es texto: la captura no debe robar ancho de banda a las fuentes
               fetchPriority="low"
               decoding="async"

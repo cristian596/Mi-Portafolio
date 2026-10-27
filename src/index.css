@@ -36,13 +36,15 @@
 }
 
 @theme {
-  --color-bg: #1a2039;
-  --color-surface: #212846;
-  --color-raised: #2a3256;
-  --color-ink: #f9a3c0;
-  --color-muted: #c497aa;
-  --color-accent: #f9a3c0;
-  --color-accent-ink: #1a2039;
+  /* Paleta 60-30-10: fondo off-white (60), grafito + grises (30), azul cobalto (10) */
+  --color-bg: #fafafa;
+  --color-surface: #f0f0f2;
+  --color-raised: #e4e4e7;
+  --color-ink: #18181b;
+  --color-muted: #63636b; /* gris neutro oscurecido para cumplir AA (≥4.5:1) también sobre surface */
+  --color-accent: #2563eb;
+  --color-accent-ink: #ffffff;
+  --color-success: #10b981;
 
   --font-display: "Unbounded", "Unbounded Fallback", sans-serif;
   --font-sans: "Onest", "Onest Fallback", ui-sans-serif, system-ui, sans-serif;

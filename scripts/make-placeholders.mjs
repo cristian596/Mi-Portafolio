@@ -21,8 +21,8 @@ const browser = browsers.find((b) => fs.existsSync(b))
 if (!browser) throw new Error('No se encontró Chrome/Edge')
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ch-ph-'))
 
-const NAVY = '#1a2039'
-const PINK = '#f9a3c0'
+const NAVY = '#fafafa' // fondo
+const PINK = '#18181b' // tinta
 
 const page = (w, h, body, bg = NAVY, ink = PINK) => `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:U;src:url(${fonts}/unbounded-latin.woff2) format('woff2');font-weight:200 900}
@@ -49,7 +49,7 @@ const projects = [
   { slug: 'tostadora', name: 'Tostadora', kind: 'Landing page · cafetería', bg: '#2b1d14', ink: '#f2c49b', field: '#3a281c' },
   { slug: 'ruta-clara', name: 'Ruta Clara', kind: 'App de tareas', bg: '#e9efe4', ink: '#1f3b2c', field: '#d6e2cf' },
   { slug: 'pulso', name: 'Pulso', kind: 'Panel del clima', bg: '#0f2a33', ink: '#8fe3d1', field: '#163944' },
-  { slug: 'portafolio', name: 'Portafolio', kind: 'Este sitio', bg: NAVY, ink: PINK, field: '#212846' },
+  { slug: 'portafolio', name: 'Portafolio', kind: 'Este sitio', bg: NAVY, ink: PINK, field: '#f0f0f2' },
 ]
 for (const p of projects) {
   const body = `<div style="position:absolute;inset:0;padding:64px;display:flex;flex-direction:column;justify-content:space-between;background:${p.bg};color:${p.ink}">
@@ -61,7 +61,7 @@ for (const p of projects) {
 }
 
 // Retrato (900×1125, 4:5)
-shoot('portrait', 900, 1125, page(900, 1125, `<div style="position:absolute;inset:0;background:#212846;display:flex;flex-direction:column;justify-content:flex-end;padding:56px">
+shoot('portrait', 900, 1125, page(900, 1125, `<div style="position:absolute;inset:0;background:#f0f0f2;display:flex;flex-direction:column;justify-content:flex-end;padding:56px">
   <div class="d" style="font-size:300px;opacity:.9">CH</div>
   <p style="font-size:34px;margin-top:32px">[PLACEHOLDER] Tu foto 4:5<br>mínimo 900×1125</p></div>`), path.join(root, 'src/assets/portrait.png'))
 

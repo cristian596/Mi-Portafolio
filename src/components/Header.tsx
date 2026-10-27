@@ -16,7 +16,7 @@ export default function Header() {
   const button = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
-    // Fondo al bajar y tinta invertida cuando pasa sobre un campo rosa ([data-inverse]).
+    // Fondo al bajar y tinta invertida cuando pasa sobre un campo oscuro ([data-inverse]).
     let frame = 0
     const update = () => {
       frame = 0

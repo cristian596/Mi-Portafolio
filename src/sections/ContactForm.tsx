@@ -168,11 +168,11 @@ export default function ContactForm() {
           Tipo de proyecto
         </label>
         <select id={`${id}-type`} name="type" defaultValue="" className={`${inputClass} appearance-none`} {...aria('type')}>
-          <option value="" disabled>
+          <option value="" disabled className="bg-bg text-ink">
             Elige una opción
           </option>
           {contact.projectTypes.map((t) => (
-            <option key={t} value={t}>
+            <option key={t} value={t} className="bg-bg text-ink">
               {t}
             </option>
           ))}
@@ -199,7 +199,7 @@ export default function ContactForm() {
           type="submit"
           disabled={status === 'sending'}
           data-magnetic
-          className="inline-flex items-center gap-3 bg-bg px-6 py-4 font-medium text-ink transition-[scale] duration-150 ease-(--ease-out) active:scale-[0.97] disabled:opacity-70"
+          className="inline-flex items-center gap-3 bg-accent px-6 py-4 font-medium text-accent-ink transition-[scale,filter] hover:brightness-110 duration-150 ease-(--ease-out) active:scale-[0.97] disabled:opacity-70"
         >
           <span data-magnetic-inner>{status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}</span>
         </button>
